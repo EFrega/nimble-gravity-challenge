@@ -22,8 +22,6 @@ export default function JobItem({ job, candidate }) {
                 repoUrl: repoUrl
             };
 
-            console.log('Sending Application Payload:', payload);
-
             const res = await apiService.applyToJob(payload);
             if (res.ok) {
                 setStatus('success');
