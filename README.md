@@ -1,16 +1,61 @@
-# React + Vite
+# Nimble Gravity Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A mini React application that allows candidates to browse open job positions and submit their application with a GitHub repository URL.
 
-Currently, two official plugins are available:
+## What it does
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Fetches the candidate's profile from the API using their email.
+2. Fetches the list of open job positions.
+3. Displays each position with an input field for a GitHub repo URL and a **Submit** button.
+4. Posts the application to the API and shows inline success/error feedback.
 
-## React Compiler
+## Tech stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- [React 19](https://react.dev/)
+- [Vite](https://vite.dev/)
+- Vanilla CSS (no UI library)
 
-## Expanding the ESLint configuration
+## Project structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+src/
+├── components/
+│   └── JobItem.jsx       # Individual job card with form and submit logic
+├── services/
+│   └── apiService.js     # All API calls (candidate, jobs, apply)
+├── App.jsx               # Root component — data fetching and layout
+├── main.jsx              # App entry point
+└── index.css             # Global styles
+```
+
+## Getting started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/EFrega/nimble-gravity-challenge.git
+cd nimble-gravity-challenge
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Run the development server
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+## Available scripts
+
+| Command | Description |
+|---|---|
+| `npm run dev` | Start the local dev server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint` | Run ESLint |
